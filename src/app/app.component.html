@@ -1,0 +1,39 @@
+<div class="container">
+  <mat-form-field>
+    <mat-label>Search</mat-label>
+    <input matInput type="text" [(ngModel)]="search" (change)="getPokemonList(pageEvent, true)">
+  </mat-form-field>
+  <mat-paginator [length]="listLength"
+                [pageSize]="10"
+                [pageSizeOptions]="[10, 20, 50]"
+                (page)="pageEvent = getPokemonList($event)"
+                #paginator>
+  </mat-paginator>
+  <mat-expansion-panel hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Types filter
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-radio-group [(ngModel)]="selectedFilter" (change)="getPokemonList(pageEvent, true)">
+      <mat-grid-list cols="5" rowHeight="40px">
+        <mat-grid-tile>
+          <mat-radio-button color="primary" checked value="all">all</mat-radio-button>
+        </mat-grid-tile>
+        <mat-grid-tile *ngFor="let item of typesFilter">
+          <mat-radio-button color="primary" [value]="item">
+            {{item}}
+          </mat-radio-button>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </mat-radio-group>
+  </mat-expansion-panel>
+</div>
+<div class="container">
+  <mat-spinner *ngIf="isLoading; else showWhenLoaded"></mat-spinner>
+  <ng-template #showWhenLoaded>
+    <div *ngFor="let item of list">
+      <pokemon-comp [pokemon]="selectedFilter ==='all'?item:item['pokemon']"></pokemon-comp>
+    </div>
+  </ng-template>
+</div>

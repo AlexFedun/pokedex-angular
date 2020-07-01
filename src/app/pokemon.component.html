@@ -1,0 +1,15 @@
+<mat-spinner *ngIf="isLoading; else showWhenLoaded"></mat-spinner>
+<ng-template #showWhenLoaded>
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>{{pokemonData['name']}}</mat-card-title>
+            <mat-card-subtitle>#{{pokemonData['id']}}
+                <type-comp *ngFor="let item of pokemonData['types']" [type]="item['type']['name']"></type-comp>
+            </mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image [src]="pokemonData['sprites']['front_default']" />
+        <mat-card-actions>
+            <button mat-flat-button color="primary" (click)="openDialog()">More info</button>
+        </mat-card-actions>
+    </mat-card>
+</ng-template>

@@ -1,0 +1,11 @@
+<mat-spinner *ngIf="isLoading; else showWhenLoaded"></mat-spinner>
+<ng-template #showWhenLoaded>
+    <mat-grid-list cols="3">
+        <mat-grid-tile-header [colspan]="3">
+            <h2>Evolution</h2>
+        </mat-grid-tile-header>
+        <mat-grid-tile *ngFor="let link of data">
+            <img [src]="link" />
+        </mat-grid-tile>
+    </mat-grid-list>
+</ng-template>

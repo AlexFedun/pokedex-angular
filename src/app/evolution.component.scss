@@ -1,0 +1,15 @@
+:host {
+
+    img {
+        width: 100%;
+        image-rendering: pixelated;
+    }
+    mat-grid-tile {
+        border: 1px solid rgba(0,0,0,.12);
+    }
+
+    h2 {
+        text-align: center;  
+        margin: 10px;
+    }
+}
