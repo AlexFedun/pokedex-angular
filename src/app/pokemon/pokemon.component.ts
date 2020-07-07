@@ -1,7 +1,7 @@
 import { Input, Component, OnInit} from '@angular/core';
 import { HttpClient} from '@angular/common/http';
 import { MatDialog } from '@angular/material/dialog';
-import { InfoComponent } from './info.component'
+import { InfoComponent } from  '../info/info.component'
 
 @Component({
   selector: 'pokemon-comp',

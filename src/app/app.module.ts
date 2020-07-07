@@ -3,11 +3,11 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { PokemonComponent } from './pokemon.component'
-import { InfoComponent } from './info.component'
-import { EvolutionComponent } from './evolution.component'
-import { TypeComponent } from './type.component'
+import { AppComponent } from './app/app.component';
+import { PokemonComponent } from './pokemon/pokemon.component'
+import { InfoComponent } from './info/info.component'
+import { EvolutionComponent } from './evolution/evolution.component'
+import { TypeComponent } from './type/type.component'
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
